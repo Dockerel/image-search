@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.9.0/mvp.css")
+        title #{pageTitle} | Image Search
+    body
+        main
+            h1
+                a(href="/") Home 
+            form(method="POST")
+                input(type="text", required, name="keyword", placeholder="Put keyword what you want to search")
+                input(type="submit", value="Search")
+            ul
+                if imageArray
+                    each image in imageArray
+                        a(href=image) 
+                            img(src=image, class="image",height="100", width="100")
+                else 
+                    li nothing found
